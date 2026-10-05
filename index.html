@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Astra AI Mini App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Шапка -->
+    <header class="header">
+      <div class="brand">
+        <div class="status-indicator"></div>
+        <span class="brand-title">Astra 6 AI</span>
+      </div>
+      <button id="btn-new-chat" class="icon-btn" title="Новый диалог">+</button>
+    </header>
+
+    <!-- Переключатель сеансов -->
+    <div class="sessions-bar" id="sessions-bar"></div>
+
+    <!-- Область сообщений -->
+    <main class="chat-area" id="chat-area">
+      <div class="empty-state" id="empty-state">
+        <div class="sparkle-icon">✨</div>
+        <p>Чем я могу помочь вам сегодня?</p>
+      </div>
+    </main>
+
+    <!-- Панель ввода -->
+    <footer class="input-panel">
+      <div class="input-wrapper">
+        <textarea id="message-input" placeholder="Спросите Astra AI..." rows="1"></textarea>
+        <button id="send-btn" class="send-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
