@@ -38,7 +38,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
 }
@@ -58,9 +58,26 @@ body {
 }
 
 .brand-title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.role-select {
+  background: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  outline: none;
 }
 
 .icon-btn {
@@ -75,12 +92,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
-}
-
-.icon-btn:active {
-  transform: scale(0.95);
-  background: var(--accent-color);
 }
 
 .sessions-bar {
@@ -92,9 +103,7 @@ body {
   background: #0f172a;
 }
 
-.sessions-bar::-webkit-scrollbar {
-  display: none;
-}
+.sessions-bar::-webkit-scrollbar { display: none; }
 
 .session-chip {
   padding: 6px 12px;
@@ -134,12 +143,13 @@ body {
 }
 
 .message-bubble {
-  max-width: 85%;
+  max-width: 88%;
   padding: 10px 14px;
   border-radius: 14px;
   font-size: 0.95rem;
   line-height: 1.4;
   word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .message-bubble.user {
@@ -153,6 +163,38 @@ body {
   background: var(--ai-msg);
   border: 1px solid var(--border-color);
   border-bottom-left-radius: 2px;
+}
+
+.message-img, .message-video {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+.file-preview-container {
+  padding: 6px 16px;
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.file-preview-container.hidden { display: none; }
+
+.preview-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-color);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .input-panel {
@@ -182,6 +224,17 @@ textarea {
   max-height: 100px;
 }
 
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.action-btn:hover { opacity: 1; }
+
 .send-btn {
   background: var(--accent-color);
   border: none;
@@ -193,9 +246,5 @@ textarea {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
-.send-btn:active {
-  background: var(--accent-hover);
-}

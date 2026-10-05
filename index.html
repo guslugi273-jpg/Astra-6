@@ -3,36 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Astra AI Mini App</title>
+  <title>ASTRA 6</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="app-container">
-    <!-- Шапка -->
     <header class="header">
       <div class="brand">
         <div class="status-indicator"></div>
-        <span class="brand-title">Astra 6 AI</span>
+        <span class="brand-title">ASTRA 6</span>
       </div>
-      <button id="btn-new-chat" class="icon-btn" title="Новый диалог">+</button>
+      <div class="header-actions">
+        <select id="role-selector" class="role-select">
+          <option value="general">🤖 Обычный</option>
+          <option value="coder">💻 Программист</option>
+          <option value="writer">✍️ Копирайтер</option>
+          <option value="analyst">📊 Аналитик</option>
+        </select>
+        <button id="btn-new-chat" class="icon-btn" title="Новый диалог">+</button>
+      </div>
     </header>
 
-    <!-- Переключатель сеансов -->
     <div class="sessions-bar" id="sessions-bar"></div>
 
-    <!-- Область сообщений -->
     <main class="chat-area" id="chat-area">
       <div class="empty-state" id="empty-state">
         <div class="sparkle-icon">✨</div>
-        <p>Чем я могу помочь вам сегодня?</p>
+        <p>Чем ASTRA 6 может помочь вам сегодня?</p>
       </div>
     </main>
 
-    <!-- Панель ввода -->
+    <!-- Превью прикрепленного файла -->
+    <div id="file-preview-container" class="file-preview-container hidden">
+      <div class="preview-content">
+        <span id="file-preview-name">file.txt</span>
+        <button id="remove-file-btn" class="remove-btn">✕</button>
+      </div>
+    </div>
+
     <footer class="input-panel">
       <div class="input-wrapper">
-        <textarea id="message-input" placeholder="Спросите Astra AI..." rows="1"></textarea>
+        <input type="file" id="file-input" style="display: none;" accept="image/*,video/*,.txt,.json,.csv,.py,.js,.html,.css,.md" />
+        <button id="attach-btn" class="action-btn" title="Прикрепить файл">📎</button>
+        <textarea id="message-input" placeholder="Спросите ASTRA 6 или загрузите файл..." rows="1"></textarea>
+        <button id="voice-btn" class="action-btn" title="Голосовой ввод">🎙️</button>
         <button id="send-btn" class="send-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
@@ -44,3 +59,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
